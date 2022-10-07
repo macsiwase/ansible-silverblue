@@ -6,6 +6,10 @@ layered_package_install:
   - net-tools
   - python3-psutil
   - vim
+  - gh
+#  - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+  - akmod-nvidia 
+  - xorg-x11-drv-nvidia-cuda 
 
 base_package_remove:
   - firefox
@@ -16,7 +20,7 @@ base_package_remove:
 flatpak_remote_install:
   - { name: 'flathub', url: 'https://dl.flathub.org/repo/flathub.flatpakrepo' }                 # Flathub
   - { name: 'fedora', url: 'oci+https://registry.fedoraproject.org' }                          # Fedora
-  - { name: 'flathub-beta', url: 'https://flathub.org/beta-repo/flathub-beta.flatpakrepo' }    # Flathub Beta
+  - { name: '--user flathub-beta', url: 'https://flathub.org/beta-repo/flathub-beta.flatpakrepo' }    # Flathub Beta
   - { name: 'gnome-nightly', url: 'https://nightly.gnome.org/gnome-nightly.flatpakrepo' }      # GNOME nightly    
 #  - { name: 'kdeapps', url: 'https://distribute.kde.org/kdeapps.flatpakrepo' }                 # KDE applications
 
@@ -27,7 +31,18 @@ flatpak_package_install:
   - { remote: 'flathub', package: 'org.gnome.Podcasts' }
   - { remote: 'flathub', package: 'org.gnome.Totem' }
   - { remote: 'flathub', package: 'org.mozilla.firefox' }
-  - { remote: 'flathub', package: 'org.remmina.Remmina' }
+  - { remote: 'flathub', package: 'org.remmina.Remmina' } 
+  - { remote: 'flathub', package: 'org.videolan.VLC' }
+  - { remote: 'flathub', package: 'com.valvesoftware.Steam' }
+  - { remote: 'flathub-beta', package: 'net.lutrix.Lutris//beta' }
+  - { remote: 'flathub', package: 'org.freedesktop.Platform.VulkanLayer.MangoHud' }
+  - { remote: 'flathub', package: 'io.github.arunsivaramanneo.GPUViewer' }
+  - { remote: 'flathub', package: 'com.microsoft.Edge' }
+  - { remote: 'flathub-beta', package: 'com.google.Chrome' }
+  - { remote: 'flathub-beta', package: 'com.brave.Browser' }
+  - { remote: 'flathub', package: 'com.github.tchx84.Flatseal' }
+  - { remote: 'flathub', package: 'com.usebottles.bottles' }
+  - { remote: 'flathub', package: 'org.phoenicis.playonlinux' }
 
 
 # The 'fonts' role #
